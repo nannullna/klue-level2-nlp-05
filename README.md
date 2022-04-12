@@ -1,5 +1,7 @@
 # KLUE LEVEL2 NLP Team 5 - ㅇㄱㄹㅇ
 
+리포트는 [하단](#report)에 있습니다.
+
 # Instruction
 
 ## Data Augmentation
@@ -333,3 +335,11 @@ If saved model directory is given to `--load_model`, then it will load the pretr
 --seed {seed_value}  # default: None
 --verbose {y or n}   # y or n
 ```
+
+# Report
+
+![report page 1](./imgs/report_Page_1.png)
+
+![report page 2](./imgs/report_Page_2.png)
+
+![report page 3](./imgs/report_Page_3.png)
