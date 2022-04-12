@@ -1,27 +1,5 @@
 # KLUE LEVEL2 NLP Team 5 - ㅇㄱㄹㅇ
 
-## Updates
-
-* (17:53, Oct 5) 자동으로 validation dataset을 split합니다. `--val_ratio 0.2`가 default 값이며, `--val_ratio 0.0`으로 설정하면 전체 데이터를 이용해서 evaluation을 진행하게 됩니다.
-
-  * 따라서 실험 중에는 추가적인 설정을 하실 필요가 없지만, ai stages에 제출시에는 `--val_ratio 0.0 --eval_every 10000` 정도로 설정해주세요! (eval every 옵션을 줘야 훈련 시간이 단축됩니다.)
-
-* (18:23, Oct 5) `--save_every 2000 --log_every 2000 --eval_every 2000` 정도로 설정해주셔도 충분히 evaluation 가능하니 훈련 속도 빠르게 하기 위해서는 이 방법 시도해보세요~
-
-* (0:55, Oct 6) train, valid set 나눌 때 `--verbose y`로 설정하면, 각 set에 포함된 라벨별 데이터 수를 출력해줍니다. 참고하세요~
-
-* (21:10, Oct 6) `--val_file y`를 설정하면 자동으로 `{data_dir}/train/valid.csv` 파일을 이용해서 validation을 수행합니다. `--val_ratio` 옵션은 자동으로 무시됩니다.
-
-* (21:28, Oct 6) `python aeda_bal_val_split.py` 실행 시, 데이터 분포의 균형을 위해 AEDA로 증강된 데이터셋을 train.csv, valid.csv로 나눠서 생성합니다. 이 경우 `--val_file y`를 설정해야 합니다.
-
-* (01:30, Oct 7) `python aeda_val_split.py` 실행 시, AEDA로 증강된 데이터셋을 train.csv, valid.csv로 나눠서 생성합니다. 이 경우 `--val_file y`를 설정해야 합니다.
-
-* (09:21, Oct 7) 두 개의 augmentation 기법들이 추가되었습니다.
-
-  * `dataset.augmentation.augmentations` 내에 `RandomReplcaeWords`를 만들었습니다. fastText와 konlpy의 Okt를 기본으로 하여 임의로 단어를 유사한 단어로 바꿉니다. 다만 시간이 상당히 오래 걸리기 때문에 훈련에서 적용은 힘들 것 같습니다. 다만, 추후 사전에 훈련 데이터를 변경시키는 방법으로 가능할 것 같습니다. 그리고 jdk, gcc 등 설치해야 하는 component가 많아서 실제로 사용하기는 매우 까다롭습니다.
-
-  * `dataset.augmentation.augmentations` 내에 `RandomFlip`을 만들었습니다. 기본값은 `0.2`의 확률로 문장을 잘라 뒤집습니다. 다만, 한 단어가 잘리는 것을 막기 위해서 문장 길이의 20~80% 지점 중 임의의 지점에서 자르게 됩니다. 한국어는 그 의미를 파악하는데 어순에 크게 상관 없어야 한다는 점을 기반으로 했으며, 비교적 빠르게 동작합니다.
-
 # Instruction
 
 ## Data Augmentation
